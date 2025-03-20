@@ -11,7 +11,7 @@ class ThemeContainer extends StatelessWidget {
     required this.childrens,
     this.crossAxisAlignment = CrossAxisAlignment.start,
     this.mainAxisAlignment = MainAxisAlignment.start,
-    this.spacing = 8,
+    this.spacing = 12,
   });
 
   @override
