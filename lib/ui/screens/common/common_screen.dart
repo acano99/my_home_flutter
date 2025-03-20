@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CommonScreen extends StatelessWidget {
   final String appBarTitle;
   final List<Widget> childrens;
-  final FloatingActionButton? fab;
+  final Widget? fab;
 
   const CommonScreen({
     super.key,
@@ -19,6 +19,7 @@ class CommonScreen extends StatelessWidget {
         title: Text(appBarTitle),
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.settings_rounded)),
+          SizedBox(width: 8),
         ],
       ),
       floatingActionButton: fab,
