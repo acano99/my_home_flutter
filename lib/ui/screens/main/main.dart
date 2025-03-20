@@ -15,6 +15,9 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     List<Destination> destinations = [
       Destination(label: 'Food', icon: Icons.food_bank_rounded),
+      Destination(label: 'Food', icon: Icons.food_bank_rounded),
+      Destination(label: 'Food', icon: Icons.food_bank_rounded),
+      Destination(label: 'Food', icon: Icons.food_bank_rounded),
     ];
 
     return Scaffold(
