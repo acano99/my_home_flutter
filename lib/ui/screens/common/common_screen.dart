@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:my_home/config/theme/app_theme.dart';
 
 class CommonScreen extends StatelessWidget {
   final String appBarTitle;
@@ -18,6 +20,7 @@ class CommonScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(appBarTitle),
         actions: [
+          //_SwitchTheme(),
           IconButton(onPressed: () {}, icon: Icon(Icons.settings_rounded)),
           SizedBox(width: 8),
         ],
@@ -30,3 +33,23 @@ class CommonScreen extends StatelessWidget {
     );
   }
 }
+
+// class _SwitchTheme extends ConsumerStatefulWidget {
+//   const _SwitchTheme();
+
+//   @override
+//   ConsumerState<ConsumerStatefulWidget> createState() => _SwitchThemeState();
+// }
+
+// class _SwitchThemeState extends ConsumerState<_SwitchTheme> {
+//   var darkMode = false;
+//   @override
+//   Widget build(BuildContext context) {
+//     return IconButton(
+//       onPressed: () {
+//         ref.read(appThemeProvider(darkTheme: false));
+//       },
+//       icon: Icon(Icons.dark_mode_rounded),
+//     );
+//   }
+// }
