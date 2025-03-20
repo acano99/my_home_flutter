@@ -1,0 +1,1 @@
+enum FabType { add, save }
