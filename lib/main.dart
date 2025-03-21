@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_home/config/router/app_router.dart';
 import 'package:my_home/config/theme/app_theme.dart';
-import 'package:my_home/ui/screens/main/main.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
@@ -12,13 +12,14 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final appTheme = ref.watch(appThemeProvider(darkTheme: true));
+    final appTheme = ref.watch(appThemeProvider);
+    final appRouter = ref.watch(appRouterProvider);
 
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: appTheme,
-      home: const MainScreen(),
     );
   }
 }
