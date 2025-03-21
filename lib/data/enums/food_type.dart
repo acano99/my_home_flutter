@@ -1,1 +1,1 @@
-enum FoodType { Desayuno, Almuerzo, Merienda, Comida }
+enum FoodType { desayuno, almuerzo, merienda, comida }
