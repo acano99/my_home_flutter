@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ThemeFood extends StatelessWidget {
-  const ThemeFood({super.key});
+  final String foodType;
+  final String food;
+
+  const ThemeFood({super.key, required this.foodType, required this.food});
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +22,7 @@ class ThemeFood extends StatelessWidget {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Desayuno"),
-            Text("Pan con dulce guayaba y refresco"),
-          ],
+          children: [Text(foodType), Text(food)],
         ),
       ],
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_home/data/enums/food_type.dart';
 import 'package:my_home/data/models/food.dart';
 import 'package:my_home/ui/screens/common/common_screen.dart';
+import 'package:my_home/ui/screens/foods/food_add_screen/food_add_controller.dart';
 import 'package:my_home/ui/widgets/theme/theme_container.dart';
 import 'package:my_home/ui/widgets/theme/theme_date_picker.dart';
 import 'package:my_home/ui/widgets/theme/theme_food.dart';
@@ -22,6 +23,8 @@ class _FoodAddScreenState extends ConsumerState<FoodAddScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final uiState = ref.watch(foodAddControllerProvider);
+
     final List<String> foodsType = [
       "Desayuno",
       "Almuerzo",
@@ -48,12 +51,12 @@ class _FoodAddScreenState extends ConsumerState<FoodAddScreen> {
               children: List.generate(
                 foodsType.length,
                 (index) => FilterChip(
-                  selected: i == index,
+                  selected: uiState.index == index,
                   label: Text(foodsType[index]),
                   onSelected: (_) {
-                    setState(() {
-                      i = index;
-                    });
+                    ref
+                        .read(foodAddControllerProvider.notifier)
+                        .setIndex(index);
                   },
                 ),
               ),
@@ -76,25 +79,32 @@ class _FoodAddScreenState extends ConsumerState<FoodAddScreen> {
                   ),
                 ),
                 onPressed: () {
-                  setState(() {
-                    foods.add(
-                      Food(name: foodController.text, type: FoodType.almuerzo),
-                    );
-                  });
+                  ref
+                      .read(foodAddControllerProvider.notifier)
+                      .setFood(
+                        Food(
+                          name: foodController.text,
+                          type: FoodType.almuerzo,
+                        ),
+                      );
                 },
                 child: Text("Agregar a la planificacion"),
               ),
             ),
           ],
         ),
-        SizedBox(height: 8),
-        ...List.generate(
-          foods.length,
-          (index) => Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
-            child: ThemeFood(),
+        if (uiState.foods != null) SizedBox(height: 8),
+        if (uiState.foods != null)
+          ...List.generate(
+            uiState.foods!.length,
+            (index) => Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: ThemeFood(
+                foodType: uiState.foods![index].type.name,
+                food: uiState.foods![index].name,
+              ),
+            ),
           ),
-        ),
       ],
     );
   }
