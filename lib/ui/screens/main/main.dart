@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_home/ui/screens/foods/food_home_sceen.dart';
+import 'package:my_home/ui/screens/foods/food_home_screen/food_home_sceen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
