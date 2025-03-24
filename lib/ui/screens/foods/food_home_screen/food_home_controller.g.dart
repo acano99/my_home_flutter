@@ -7,7 +7,7 @@ part of 'food_home_controller.dart';
 // **************************************************************************
 
 String _$foodHomeControllerHash() =>
-    r'7509e18d249139e85afd8eebb23fe21257d07a0a';
+    r'94a6a54795bbf20ef00ea74904170aef60507e78';
 
 /// See also [FoodHomeController].
 @ProviderFor(FoodHomeController)
