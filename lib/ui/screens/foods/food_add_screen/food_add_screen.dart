@@ -10,19 +10,11 @@ import 'package:my_home/ui/widgets/theme/theme_icon_header.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 //TODO: Agregar el formulario para facilitar la validacion
-class FoodAddScreen extends ConsumerStatefulWidget {
+class FoodAddScreen extends ConsumerWidget {
   const FoodAddScreen({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _FoodAddScreenState();
-}
-
-class _FoodAddScreenState extends ConsumerState<FoodAddScreen> {
-  int i = 0;
-  List<Food> foods = [];
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final uiState = ref.watch(foodAddControllerProvider);
 
     final List<String> foodsType = [
