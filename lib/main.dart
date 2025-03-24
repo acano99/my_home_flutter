@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:my_home/config/router/app_router.dart';
 import 'package:my_home/config/theme/app_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:my_home/data/database/app_database.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    await AppDatabase().database;
+  } catch (e) {
+    print(e);
+  }
   runApp(ProviderScope(child: MyApp()));
 }
 
