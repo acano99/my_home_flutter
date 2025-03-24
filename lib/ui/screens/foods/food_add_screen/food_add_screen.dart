@@ -36,15 +36,7 @@ class FoodAddScreen extends ConsumerWidget {
           ref
               .read(foodAddControllerProvider.notifier)
               .insertDayMenu(
-                DayMenu(
-                  date: formatDate(DateTime.now()),
-                  foods: [
-                    Food(name: "Test 1", type: FoodType.almuerzo),
-                    Food(name: "Test 2", type: FoodType.comida),
-                    Food(name: "Test 3", type: FoodType.desayuno),
-                    Food(name: "Test 4", type: FoodType.merienda),
-                  ],
-                ),
+                DayMenu(date: formatDate(DateTime.now()), foods: uiState.foods),
               );
         },
         fabType: FabType.save,
