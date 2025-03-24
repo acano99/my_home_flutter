@@ -6,7 +6,7 @@ part of 'get_day_menu_use_case.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getDayMenuUSeCaseHash() => r'707d4769ab63e37e16071ad39fa5bb421c367261';
+String _$getDayMenuUSeCaseHash() => r'adb21ca3b458449cbff5b5cb21e02375d76ba86a';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -34,7 +34,7 @@ class _SystemHash {
 const getDayMenuUSeCaseProvider = GetDayMenuUSeCaseFamily();
 
 /// See also [getDayMenuUSeCase].
-class GetDayMenuUSeCaseFamily extends Family<AsyncValue<int>> {
+class GetDayMenuUSeCaseFamily extends Family<AsyncValue<List<DayMenu>>> {
   /// See also [getDayMenuUSeCase].
   const GetDayMenuUSeCaseFamily();
 
@@ -66,7 +66,8 @@ class GetDayMenuUSeCaseFamily extends Family<AsyncValue<int>> {
 }
 
 /// See also [getDayMenuUSeCase].
-class GetDayMenuUSeCaseProvider extends AutoDisposeFutureProvider<int> {
+class GetDayMenuUSeCaseProvider
+    extends AutoDisposeFutureProvider<List<DayMenu>> {
   /// See also [getDayMenuUSeCase].
   GetDayMenuUSeCaseProvider(String date)
     : this._internal(
@@ -97,7 +98,7 @@ class GetDayMenuUSeCaseProvider extends AutoDisposeFutureProvider<int> {
 
   @override
   Override overrideWith(
-    FutureOr<int> Function(GetDayMenuUSeCaseRef provider) create,
+    FutureOr<List<DayMenu>> Function(GetDayMenuUSeCaseRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -114,7 +115,7 @@ class GetDayMenuUSeCaseProvider extends AutoDisposeFutureProvider<int> {
   }
 
   @override
-  AutoDisposeFutureProviderElement<int> createElement() {
+  AutoDisposeFutureProviderElement<List<DayMenu>> createElement() {
     return _GetDayMenuUSeCaseProviderElement(this);
   }
 
@@ -134,13 +135,13 @@ class GetDayMenuUSeCaseProvider extends AutoDisposeFutureProvider<int> {
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-mixin GetDayMenuUSeCaseRef on AutoDisposeFutureProviderRef<int> {
+mixin GetDayMenuUSeCaseRef on AutoDisposeFutureProviderRef<List<DayMenu>> {
   /// The parameter `date` of this provider.
   String get date;
 }
 
 class _GetDayMenuUSeCaseProviderElement
-    extends AutoDisposeFutureProviderElement<int>
+    extends AutoDisposeFutureProviderElement<List<DayMenu>>
     with GetDayMenuUSeCaseRef {
   _GetDayMenuUSeCaseProviderElement(super.provider);
 
