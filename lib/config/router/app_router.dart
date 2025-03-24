@@ -2,8 +2,8 @@ import 'package:my_home/config/router/routes.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../ui/screens/foods/food_home_sceen.dart';
-import '../../ui/screens/foods/food_add_screen.dart';
+import '../../ui/screens/foods/food_home_screen/food_home_sceen.dart';
+import '../../ui/screens/foods/food_add_screen/food_add_screen.dart';
 
 part 'app_router.g.dart';
 
