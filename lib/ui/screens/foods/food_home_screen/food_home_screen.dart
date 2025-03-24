@@ -45,8 +45,8 @@ class FoodHomeScreen extends ConsumerWidget {
                                   ),
                                   ...data.dayMenu!.foods.map(
                                     (e) => ThemeFood(
-                                      foodType: e.name,
-                                      food: e.type.name,
+                                      foodType: e.type.name,
+                                      food: e.name,
                                     ),
                                   ),
                                 ],
