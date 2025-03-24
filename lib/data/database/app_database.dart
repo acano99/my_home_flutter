@@ -29,6 +29,8 @@ class AppDatabase {
 
   Future<void> _onCreate(Database db, int version) async {
     await db.execute(DayMenuTable.createTable);
+    await db.execute(FoodTable.createTable);
+    await db.execute(DayMenuFoodTable.createTable);
   }
 
   // TODO: Futura implementacion
