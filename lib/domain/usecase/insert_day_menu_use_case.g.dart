@@ -7,7 +7,7 @@ part of 'insert_day_menu_use_case.dart';
 // **************************************************************************
 
 String _$insertDayMenuUseCaseHash() =>
-    r'a390f0b3b44f2c4fe12ddb781d2780df1235c499';
+    r'5ab866634c345e2b1a93bb143d094131f440dc7c';
 
 /// Copied from Dart SDK
 class _SystemHash {

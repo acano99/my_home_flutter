@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:my_home/data/enums/fab_type.dart';
 import 'package:my_home/data/enums/food_type.dart';
+import 'package:my_home/data/models/day_menu.dart';
 import 'package:my_home/data/models/food.dart';
+import 'package:my_home/domain/helpers/foramt_date.dart';
 import 'package:my_home/ui/screens/common/common_screen.dart';
 import 'package:my_home/ui/screens/foods/food_add_screen/food_add_controller.dart';
 import 'package:my_home/ui/widgets/theme/theme_container.dart';
 import 'package:my_home/ui/widgets/theme/theme_date_picker.dart';
+import 'package:my_home/ui/widgets/theme/theme_fab.dart';
 import 'package:my_home/ui/widgets/theme/theme_food.dart';
 import 'package:my_home/ui/widgets/theme/theme_icon_header.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -27,6 +31,24 @@ class FoodAddScreen extends ConsumerWidget {
 
     return CommonScreen(
       appBarTitle: 'Add Food',
+      fab: ThemeFab(
+        onPressed: () {
+          ref
+              .read(foodAddControllerProvider.notifier)
+              .insertDayMenu(
+                DayMenu(
+                  date: formatDate(DateTime.now()),
+                  foods: [
+                    Food(name: "Test 1", type: FoodType.almuerzo),
+                    Food(name: "Test 2", type: FoodType.comida),
+                    Food(name: "Test 3", type: FoodType.desayuno),
+                    Food(name: "Test 4", type: FoodType.merienda),
+                  ],
+                ),
+              );
+        },
+        fabType: FabType.save,
+      ),
       childrens: [
         ThemeDatePicker(onTap: () {}),
         SizedBox(height: 8),

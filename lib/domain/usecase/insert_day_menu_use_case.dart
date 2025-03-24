@@ -7,10 +7,5 @@ import 'package:my_home/data/database/app_database.dart';
 part 'insert_day_menu_use_case.g.dart';
 
 @riverpod
-Future<int> insertDayMenuUseCase(Ref ref, DayMenu dayMenu) async {
-  try {
-    return DayMenuDao(db: await AppDatabase().database).insertDayMenu(dayMenu);
-  } catch (e) {
-    throw Exception(e.toString());
-  }
-}
+Future<int> insertDayMenuUseCase(Ref ref, DayMenu dayMenu) async =>
+    DayMenuDao(db: await AppDatabase().database).insertDayMenu(dayMenu);

@@ -24,7 +24,7 @@ class FoodAddController extends _$FoodAddController {
     state = FoodAddUiState(foods, index: state.index);
   }
 
-  Future<void> insertDayMenu(Ref ref, DayMenu dayMenu) async {
+  Future<void> insertDayMenu(DayMenu dayMenu) async {
     ref.watch(insertDayMenuUseCaseProvider(dayMenu));
   }
 }
