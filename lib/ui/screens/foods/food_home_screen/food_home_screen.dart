@@ -43,21 +43,11 @@ class FoodHomeScreen extends ConsumerWidget {
                                     icon: Icons.local_restaurant_rounded,
                                     title: "Comidas Planificadas",
                                   ),
-                                  ThemeFood(
-                                    foodType: "Test",
-                                    food: "Test test test",
-                                  ),
-                                  ThemeFood(
-                                    foodType: "Test",
-                                    food: "Test test test",
-                                  ),
-                                  ThemeFood(
-                                    foodType: "Test",
-                                    food: "Test test test",
-                                  ),
-                                  ThemeFood(
-                                    foodType: "Test",
-                                    food: "Test test test",
+                                  ...data.dayMenu!.foods.map(
+                                    (e) => ThemeFood(
+                                      foodType: e.name,
+                                      food: e.type.name,
+                                    ),
                                   ),
                                 ],
                               ),
