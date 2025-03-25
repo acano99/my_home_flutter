@@ -1,29 +1,28 @@
+import 'package:bloc/bloc.dart';
 import 'package:my_home/config/router/routes.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../ui/screens/foods/food_home_screen/food_home_screen.dart';
-import '../../ui/screens/foods/food_add_screen/food_add_screen.dart';
+import '../../ui/screens/screens.dart';
 
-part 'app_router.g.dart';
+/// Definicion de las rutas del proyecto y el cubit correspondiente
+/// para el manejo de las mismas
 
-@riverpod
-class AppRouter extends _$AppRouter {
-  final GoRouter _router = GoRouter(
-    initialLocation: Routes.foodHome,
-    routes: [
-      GoRoute(
-        path: Routes.foodHome,
-        builder: (context, state) => FoodHomeScreen(),
-        name: Routes.foodHome,
-      ),
-      GoRoute(
-        path: Routes.foodAdd,
-        builder: (context, state) => FoodAddScreen(),
-        name: Routes.foodAdd,
-      ),
-    ],
-  );
-  @override
-  GoRouter build() => _router;
+final GoRouter _router = GoRouter(
+  initialLocation: Routes.foodHome,
+  routes: [
+    GoRoute(
+      path: Routes.foodHome,
+      builder: (context, state) => FoodHomeScreen(),
+      name: Routes.foodHome,
+    ),
+    GoRoute(
+      path: Routes.foodAdd,
+      builder: (context, state) => FoodAddScreen(),
+      name: Routes.foodAdd,
+    ),
+  ],
+);
+
+class AppRouterCubit extends Cubit<GoRouter> {
+  AppRouterCubit() : super(_router);
 }
