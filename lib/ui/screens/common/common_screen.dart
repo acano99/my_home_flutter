@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_home/config/theme/app_theme.dart';
@@ -106,20 +107,21 @@ class _DrawerButton extends StatelessWidget {
   }
 }
 
-class _SwitchTheme extends ConsumerStatefulWidget {
+class _SwitchTheme extends StatefulWidget {
   const _SwitchTheme();
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _SwitchThemeState();
+  State<_SwitchTheme> createState() => _SwitchThemeState();
 }
 
-class _SwitchThemeState extends ConsumerState<_SwitchTheme> {
+class _SwitchThemeState extends State<_SwitchTheme> {
   var darkMode = false;
   @override
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-        ref.read(appThemeProvider.notifier).switchTheme(darkMode);
+        setState(() => darkMode = !darkMode);
+        context.read<AppThemeCubit>().toggleTheme();
       },
       icon: Icon(Icons.dark_mode_rounded),
     );
