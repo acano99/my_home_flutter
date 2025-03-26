@@ -5,6 +5,8 @@ import 'package:my_home/config/theme/app_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_home/data/database/app_database.dart';
 import 'package:my_home/get_it_instance.dart';
+import 'package:my_home/ui/blocs/date/date_cubit.dart';
+import 'package:my_home/ui/blocs/day_menu/day_menu_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +28,8 @@ class Blocs extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => getIt<AppRouterCubit>()),
         BlocProvider(create: (context) => getIt<AppThemeCubit>()),
+        BlocProvider(create: (context) => getIt<DayMenuBloc>()),
+        BlocProvider(create: (context) => getIt<DateCubit>()),
       ],
       child: MyApp(),
     );
