@@ -42,7 +42,7 @@ class FoodAddScreen extends ConsumerWidget {
         fabType: FabType.save,
       ),
       childrens: [
-        ThemeDatePicker(onTap: () {}),
+        ThemeDatePicker(onTap: () {}, date: formatDate(DateTime.now())),
         SizedBox(height: 8),
         ThemeContainer(
           spacing: 20,
